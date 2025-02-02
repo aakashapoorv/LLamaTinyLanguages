@@ -1,4 +1,4 @@
-# Llama and Datasets for 4 Nordic Indigenous Languages
+# Llama3 Model and Datasets for 4 Nordic Indigenous Languages
 
 These Nordic indigenous (minority) languages carry rich cultural identity and heritage. Due to the scarcity of training data for these languages, we are releasing curated datasets and a lightweight Llama-based model. Our models are designed to run on low-cost consumer hardware, making them accessible even in environments with limited internet speed or GPU performance.
 
