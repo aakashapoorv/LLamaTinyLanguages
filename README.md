@@ -8,6 +8,62 @@ https://docs.google.com/presentation/d/1TGG8hRdhB4GPJd6iuzSZpArUbJ4FZoRMhFAJx_ia
 Video
 https://www.youtube.com/watch?v=R9-jJjCbEjg
 
+## How to Run
+
+Below are the instructions for running the models using `vllm`. You can run the merged model or any of the individual models by following these steps.
+
+```bash
+# Install vllm if you haven't already
+pip install vllm
+
+# Serve the merged model (Sami, Kven, Faroese, Kalaallisut)
+vllm serve OpenGenerativeAI/Llama-3.2-3B-Sami_Kven_Faroese_Kalaallisut-Instruct-16bit
+
+# Check the available models
+curl http://localhost:8000/v1/models
+
+# Send a completion request (example using the merged model)
+curl http://localhost:8000/v1/completions \
+    -H "Content-Type: application/json" \
+    -d '{
+          "model": "OpenGenerativeAI/Llama-3.2-3B-Sami_Kven_Faroese_Kalaallisut-Instruct-16bit",
+          "prompt": "Davvi: Mii lea guovdilat davvirikkarášis vuosttaš eahket eará sániid numermalaš árvvu, jus galgá vuosttaš sáni.",
+          "max_tokens": 700,
+          "temperature": 0
+        }'
+
+```
+
+To run any of the individual models, simply replace the model identifier in the command above:
+
+-   **For Kven:**
+    
+    ```bash
+    vllm serve OpenGenerativeAI/Llama-3.2-3B-Kven-Instruct-16bit
+    
+    ```
+    
+-   **For Kalaallisut:**
+    
+    ```bash
+    vllm serve OpenGenerativeAI/Llama-3.2-3B-Kalaallisut-Instruct-16bit
+    
+    ```
+    
+-   **For Faroese:**
+    
+    ```bash
+    vllm serve OpenGenerativeAI/Llama-3.2-3B-Faroese-Instruct-16bit
+    
+    ```
+    
+-   **For Sami:**
+    
+    ```bash
+    vllm serve OpenGenerativeAI/Llama-3.2-3B-Sami-Instruct-16bit
+    
+    ```
+
 ## Languages Covered
 
 ### Sami Languages
